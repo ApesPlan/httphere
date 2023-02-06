@@ -16,6 +16,15 @@ go install github.com/youwen21/httphere
 # configure
 edit .env file 
 
+```env
+cd {pwd}
+touch .env
+
+PORT=3100
+BACKEND="http://127.0.0.1:8099/"
+```
+
+
 # start server
 
 in terminal
