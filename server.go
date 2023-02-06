@@ -10,14 +10,14 @@ import (
 	"strings"
 )
 
-type myServer struct {
+type MyServer struct {
 	root string
 
 	fileServer   http.Handler
 	reverseSever *httputil.ReverseProxy
 }
 
-func (f myServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (f MyServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	upath := r.URL.Path
 	if !strings.HasPrefix(upath, "/") {
 		upath = "/" + upath
@@ -31,8 +31,8 @@ func (f myServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func NewMyServer(root string, proxyURL string) myServer {
-	var s myServer
+func NewMyServer(root string, proxyURL string) MyServer {
+	var s MyServer
 
 	s.fileServer = http.FileServer(http.Dir(root))
 
