@@ -33,9 +33,9 @@ func (f MyServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func NewMyServer(root string, proxyURL string) MyServer {
 	var s MyServer
+	s.root = root
 
 	s.fileServer = http.FileServer(http.Dir(root))
-
 	backendURL, err := url.Parse(proxyURL)
 	if err != nil {
 		fmt.Printf("backend proxy server invalid: %v\n", err)
