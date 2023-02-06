@@ -10,7 +10,7 @@ you can config the ReverseProxy backend url.
 go install github.com/youwen21/httphere
 
 ## download execution directly 
-> http://github.com/youwen21/httphere
+> https://github.com/youwen21/httphere/releases
 
 
 # configure
